@@ -154,30 +154,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Efectos hover en botones
     // ==========================
     document.querySelectorAll(".btn").forEach(button => {
-
-        button.addEventListener("mouseenter", () => {
-            button.style.transform = "translateY(-4px)";
-        });
-
-        button.addEventListener("mouseleave", () => {
-            button.style.transform = "";
-        });
-
+        button.style.setProperty('--hover-state', '0');
     });
 
     // ==========================
     // Efectos hover en tarjetas
     // ==========================
     document.querySelectorAll(".card").forEach(card => {
-
-        card.addEventListener("mouseenter", () => {
-            card.style.transform = "translateY(-8px)";
-        });
-
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = "";
-        });
-
+        card.style.setProperty('--hover-state', '0');
     });
 
     // ============================================

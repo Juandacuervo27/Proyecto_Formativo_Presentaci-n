@@ -57,7 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             e.preventDefault();
 
-            const targetId = link.getAttribute("href")?.slice(1);
+            const rawHref = link.getAttribute("href") || "";
+            const targetId = rawHref.replace(/^#/, "");
             const target = targetId ? document.getElementById(targetId) : null;
 
             if (target && mainContent) {

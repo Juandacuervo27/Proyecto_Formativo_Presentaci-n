@@ -27,11 +27,12 @@
       <div class="nav-group">
         <a href="#diagramas">Diagramas</a>
         <div class="submenu">
-          <a href="#mapa-navegacion">• Mapa de navegación</a>
           <a href="#diagrama-procesos">• Diagrama de procesos</a>
-          <a href="#diagrama-clases">• Diagrama de clases</a>
-          <a href="#mer-base-datos">• MER / Base de datos</a>
+          <a href="#mer-Casos-De-Usos">• Diagrama de casos de uso</a>
+          <a href="#mapa-navegacion">• Mapa de navegación</a>
           <a href="#diagrama-conceptual">• Diagrama conceptual</a>
+          <a href="#mer-base-datos">• MER / Base de datos</a>
+          <a href="#diagrama-clases">• Diagrama de clases</a>
         </div>
       </div>
 
@@ -47,6 +48,7 @@
 
       <a href="#prototipo">Prototipo</a>
       <a href="#documentacion">Documentación</a>
+      <a href="#planificacion-futura">Planificación Futura</a>
       <a href="#resumen">Resumen</a>
     </nav>
   </aside>
@@ -192,47 +194,11 @@
       </p>
     </section>
 
-    <section class="microsection" id="mapa-navegacion">
-      <div class="card">
-        <h4>Mapa de Navegación</h4>
-        <div class="diagram-container">
-          <img src="img/Mapa de navegación.png" alt="Mapa de navegación del sistema CosmeticLAB mostrando la estructura de páginas">
-        </div>
-      </div>
-    </section>
-
     <section class="microsection" id="diagrama-procesos">
       <div class="card">
         <h4>Diagrama de Procesos</h4>
         <div class="diagram-container">
           <img src="img/Diagrama de Procesos.png" alt="Diagrama de procesos de CosmeticLAB que ilustra el flujo de operaciones del negocio">
-        </div>
-      </div>
-    </section>
-
-    <section class="microsection" id="diagrama-clases">
-      <div class="card">
-        <h4>Diagrama de Clases</h4>
-        <div class="diagram-container">
-          <img src="img/Diagrama_de_clases_UML.png" alt="Diagrama UML de clases que define la estructura orientada a objetos del sistema">
-        </div>
-      </div>
-    </section>
-
-    <section class="microsection" id="mer-base-datos">
-      <div class="card">
-        <h4>Modelo Entidad-Relación</h4>
-        <div class="diagram-container">
-          <img src="img/Diagrama de MER.png" alt="Modelo Entidad-Relación de la base de datos con entidades de productos, pedidos y usuarios">
-        </div>
-      </div>
-    </section>
-
-    <section class="microsection" id="diagrama-conceptual">
-      <div class="card">
-        <h4>Diagrama Conceptual</h4>
-        <div class="diagram-container">
-          <img src="img/Diagrama conceptual.png" alt="Diagrama conceptual que representa los conceptos clave y relaciones del dominio de negocio">
         </div>
       </div>
     </section>
@@ -246,10 +212,44 @@
       </div>
     </section>
 
+    <section class="microsection" id="mapa-navegacion">
+      <div class="card">
+        <h4>Mapa de Navegación</h4>
+        <div class="diagram-container">
+          <img src="img/Mapa de navegación.png" alt="Mapa de navegación del sistema CosmeticLAB mostrando la estructura de páginas">
+        </div>
+      </div>
+    </section>
+
+    <section class="microsection" id="diagrama-conceptual">
+      <div class="card">
+        <h4>Diagrama Conceptual</h4>
+        <div class="diagram-container">
+          <img src="img/Diagrama Conceptual.png" alt="Diagrama conceptual que representa los conceptos clave y relaciones del dominio de negocio">
+        </div>
+      </div>
+    </section>
+
+    <section class="microsection" id="mer-base-datos">
+      <div class="card">
+        <h4>Modelo Entidad-Relación</h4>
+        <div class="diagram-container">
+          <img src="img/Diagrama de MER.png" alt="Modelo Entidad-Relación de la base de datos con entidades de productos, pedidos y usuarios">
+        </div>
+      </div>
+    </section>
+
+    <section class="microsection" id="diagrama-clases">
+      <div class="card">
+        <h4>Diagrama de Clases</h4>
+        <div class="diagram-container">
+          <img src="img/Diagrama de clases UML.png" alt="Diagrama UML de clases que define la estructura orientada a objetos del sistema">
+        </div>
+      </div>
+    </section>
+
     <section id="arquitectura">
-
     <h2>Arquitectura del Sistema</h2>
-
     <p class="intro">
         CosmeticLAB fue desarrollado bajo una <strong>arquitectura monolítica organizada en capas</strong>,
         una solución que separa claramente la interfaz de usuario, la lógica de negocio y la persistencia
@@ -258,7 +258,6 @@
     </p>
 
     <div class="architecture-grid">
-
     <div class="layer-card" id="presentacion">
         <h3>Presentación</h3>
         <p>
@@ -338,35 +337,48 @@
         </section>
 
         <section class="microsection">
-            <h3>Patrones Aplicados</h3>
+          <h3>Patrones y Arquitecturas Aplicadas</h3>
 
-            <div class="cards">
+          <div class="cards">
 
-                <div class="card">
-                    <h4>Modelo - Vista - Controlador (MVC)</h4>
-                    <p>
-                        Separa la lógica del negocio, la interfaz de usuario y el acceso a los datos,
-                        facilitando el mantenimiento, la reutilización del código y el desarrollo modular.
-                    </p>
-                </div>
+              <div class="card">
+                  <h4>Modelo - Vista - Controlador (MVC)</h4>
+                  <p>
+                      Adoptamos el patrón MVC para separar las responsabilidades del sistema en tres componentes:
+                      el <strong>Modelo</strong>, encargado de gestionar la información y la interacción con la base de datos;
+                      la <strong>Vista</strong>, responsable de mostrar la interfaz al usuario; y el
+                      <strong>Controlador</strong>, que coordina las solicitudes entre ambos. Esta estructura facilita el
+                      mantenimiento del código, mejora su reutilización y permite incorporar nuevas funcionalidades sin
+                      afectar el resto de la aplicación.
+                  </p>
+              </div>
 
-                <div class="card">
-                    <h4>Cliente - Servidor</h4>
-                    <p>
-                        El navegador actúa como cliente enviando solicitudes al servidor, donde PHP
-                        procesa la información y consulta la base de datos antes de generar la respuesta.
-                    </p>
-                </div>
+              <div class="card">
+                  <h4>Arquitectura Cliente - Servidor</h4>
+                  <p>
+                      Seleccionamos una arquitectura Cliente-Servidor porque el sistema se basa en la comunicación entre
+                      el navegador del usuario (cliente) y un servidor web donde se ejecuta PHP y se almacena la información
+                      en MySQL. De esta manera, toda la lógica del negocio y los datos permanecen centralizados en el servidor,
+                      mientras que el cliente únicamente realiza solicitudes y presenta la información recibida. Esto mejora
+                      la seguridad, facilita el mantenimiento y garantiza que todos los usuarios consulten la misma información.
+                  </p>
+              </div>
 
-                <div class="card">
-                    <h4>Arquitectura en Capas</h4>
-                    <p>
-                        El sistema se organiza en tres capas: presentación (HTML, CSS y JavaScript),
-                        lógica de negocio (PHP) y persistencia (MySQL), reduciendo el acoplamiento entre componentes.
-                    </p>
-                </div>
-            </div>
-        </section>
+              <div class="card">
+                  <h4>Arquitectura en Capas</h4>
+                  <p>
+                      Organizamos internamente la aplicación en tres capas independientes: <strong>Presentación</strong>
+                      (HTML5, CSS3, Bootstrap y JavaScript), encargada de la interacción con el usuario;
+                      <strong>Lógica de Negocio</strong> (PHP), donde se implementan las reglas del sistema y el
+                      procesamiento de las solicitudes; y <strong>Persistencia</strong> (MySQL), responsable del almacenamiento
+                      y consulta de los datos. Esta separación reduce el acoplamiento entre componentes, facilita la
+                      localización de errores y permite que futuras ampliaciones del sistema puedan realizarse con un menor
+                      impacto sobre la estructura existente.
+                  </p>
+              </div>
+
+          </div>
+      </section>
 
     <section id="prototipo">
       <h2>Prototipo</h2>
@@ -764,6 +776,29 @@
           </ul>
         </div>
       </div>
+
+      <section id="planificacion-futura">
+        <h2>Planificación Futura</h2>
+        <p>Las próximas fases del proyecto buscan convertir CosmeticLAB en una plataforma más completa, escalable y preparada para el crecimiento del emprendimiento.</p>
+
+        <div class="cards">
+          <div class="card">
+            <h4>Expansión del catálogo</h4>
+            <p>Agregar nuevas categorías, filtros inteligentes y gestión de inventario en tiempo real para mejorar la experiencia de compra.</p>
+          </div>
+
+          <div class="card">
+            <h4>Gestión de pedidos avanzada</h4>
+            <p>Implementar seguimiento de estados, historial de compras y alertas automáticas para optimizar la operación del negocio.</p>
+          </div>
+
+          <div class="card">
+            <h4>Integración comercial</h4>
+            <p>Incorporar pasarelas de pago, carrito de compras y herramientas de marketing digital para fortalecer las ventas online.</p>
+          </div>
+        </div>
+      </section>
+
 <section class="highlight-band" id="resumen">
   <div class="closing-message">
     <h2>¡Gracias por su atención!</h2>
